@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP Docker Top 10: Secure User Mapping - Aarati Bulun</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header/Navigation (hardcoded) -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <span>Aarati Bulun</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="index.html" class="active">Blog</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <article style="max-width: 900px; margin: 2rem auto; background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+            <header style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 2px solid #e2e8f0;">
+                <h1 style="color: #1e3a5f; font-size: 2.5rem; margin-bottom: 1rem;">OWASP Docker Top 10: Secure User Mapping</h1>
+                <div style="color: #718096;">
+                    By Aarati | 
+                    Published: May 03, 2026
+                </div>
+            </header>
+            
+            <div style="line-height: 1.8; color: #4a5568; font-size: 1.1rem;">
+                <p><strong>TL;DR:</strong> Never run Docker containers as root. Always map container users to non-root host users to prevent privilege escalation attacks.</p>
+                
+                <br>
+                <h3 style="color: #1e3a5f; margin: 1.5rem 0 1rem;">🔍 Why User Mapping Matters</h3>
+                <p>By default, Docker containers run processes as root (UID 0). If an attacker compromises the container, they gain root access to the container filesystem. Without proper user mapping, this can escalate to host-level access.</p>
+                
+                <br>
+                <h3 style="color: #1e3a5f; margin: 1.5rem 0 1rem;">⚠️ The Core Problem</h3>
+                <p>When a container runs as root and writes files to a mounted volume, those files are owned by root on the host system. This breaks the principle of least privilege and creates a serious security gap.</p>
+                
+                <br>
+                <h3 style="color: #1e3a5f; margin: 1.5rem 0 1rem;">🛡️ How to Prevent It</h3>
+                <pre style="background: #f7fafc; padding: 1rem; border-radius: 8px; overflow-x: auto; border-left: 4px solid #38b2ac;">
+# ✅ Dockerfile best practice
+FROM node:18-alpine
+
+# Create non-root user
+RUN addgroup -g 1001 appgroup && \
+    adduser -u 1001 -G appgroup -S appuser
+
+# Switch to non-root user
+USER appuser
+
+# Set working directory
+WORKDIR /home/appuser/app
+                </pre>
+                
+                <br>
+                <h3 style="color: #1e3a5f; margin: 1.5rem 0 1rem;">🔧 Additional Security Controls</h3>
+                <ul style="margin-left: 1.5rem;">
+                    <li>Drop unnecessary Linux capabilities: <code>--cap-drop=ALL</code></li>
+                    <li>Enable read-only root filesystem: <code>--read-only</code></li>
+                    <li>Use minimal base images (alpine, distroless)</li>
+                    <li>Scan images with Trivy or Docker Scout</li>
+                    <li>Run containers with <code>--userns-remap</code> for user namespace isolation</li>
+                </ul>
+                
+                <br>
+                <h3 style="color: #1e3a5f; margin: 1.5rem 0 1rem;">🎯 Key Takeaways</h3>
+                <ul style="margin-left: 1.5rem;">
+                    <li>✅ Always run containers as non-root users</li>
+                    <li>✅ Map container UIDs to restricted host UIDs</li>
+                    <li>✅ Test security configs in staging before production</li>
+                    <li>✅ Document your container security policies</li>
+                </ul>
+                
+                <div style="margin-top: 2rem; padding: 1rem; background: #ebf8ff; border-left: 4px solid #3182ce; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: #2c5282;">
+                        💡 <strong>Pro Tip:</strong> Add this to your CI/CD pipeline to enforce non-root users:
+                        <br><code>docker run --user 1001:1001 my-image</code>
+                    </p>
+                </div>
+            </div>
+            
+            <footer style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #e2e8f0;">
+                <a href="index.html" class="btn btn-secondary">← Back to Blog</a>
+            </footer>
+        </article>
+    </main>
+    
+    <!-- Footer (hardcoded) -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Aarati Bulun. All rights reserved.</p>
+            <p class="security-badge">🔒 OWASP Top 10 Protected | Docker Secured</p>
+        </div>
+    </footer>
+</body>
+</html>

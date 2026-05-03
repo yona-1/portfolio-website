@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Aarati Bulun</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header/Navigation (hardcoded) -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <span>Aarati Bulun</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="index.html" class="active">Blog</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero" style="padding: 80px 2rem;">
+            <div class="container">
+                <h1>Blog</h1>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="blog-grid">
+                
+                <!-- Blog Post 1 -->
+                <article class="blog-card">
+                    <div class="blog-content">
+                        <div class="blog-meta">May 03, 2026</div>
+                        <h3>OWASP Docker Top 10: Secure User Mapping</h3>
+                        <p>Understanding container privilege escalation and how to prevent it with proper user mapping. Learn why running containers as root is dangerous and how to implement least-privilege principles...</p>
+                        <a href="view.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card">
+                    <div class="blog-content">
+                        <div class="blog-meta">Apr 28, 2026</div>
+                        <h3>Secure Coding Practices in PHP</h3>
+                        <p>Essential security techniques every PHP developer should know: input sanitization, prepared statements, CSRF tokens, and protecting against XSS and SQL injection attacks...</p>
+                        <a href="view.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card">
+                    <div class="blog-content">
+                        <div class="blog-meta">Apr 15, 2026</div>
+                        <h3>Introduction to Penetration Testing</h3>
+                        <p>A beginner's guide to ethical hacking: reconnaissance, scanning, exploitation, and reporting. Learn the methodologies used by security professionals to find vulnerabilities...</p>
+                        <a href="view.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card">
+                    <div class="blog-content">
+                        <div class="blog-meta">Apr 01, 2026</div>
+                        <h3>Digital Forensics: Email Header Analysis</h3>
+                        <p>How to trace email origins, detect spoofing, and extract metadata for forensic investigations. Practical techniques for cybersecurity analysts and incident responders...</p>
+                        <a href="view.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer (hardcoded) -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Aarati Bulun. All rights reserved.</p>
+            <p class="security-badge">🔒 OWASP Top 10 Protected | Docker Secured</p>
+        </div>
+    </footer>
+</body>
+</html>

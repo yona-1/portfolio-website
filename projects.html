@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Aarati Bulun</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ✅ FIXED: Classes now match style.css -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <span>Aarati Bulun</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <section class="hero" style="padding: 80px 2rem;">
+        <div class="container">
+            <h1>My Projects</h1>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="blog-grid">
+                
+                <!-- Project 1 -->
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <h3> Secure Portfolio Website</h3>
+                        <p>A full-stack portfolio with blog, built with PHP, MySQL, and Docker. Implements OWASP Top 10 security measures.</p>
+                        <div style="margin: 1rem 0;">
+                            <span style="display: inline-block; background: #e6fffa; color: #234e52; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; margin: 0.25rem;">PHP</span>
+                            <span style="display: inline-block; background: #e6fffa; color: #234e52; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; margin: 0.25rem;">MySQL</span>
+                            <span style="display: inline-block; background: #e6fffa; color: #234e52; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; margin: 0.25rem;">Docker</span>
+                        </div>
+                        <a href="#" class="btn btn-primary" onclick="alert('Demo project - view code on GitHub!')">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <h3> E-Commerce Platform</h3>
+                        <p>Online shopping platform with secure payment integration and user authentication.</p>
+                        <div style="margin: 1rem 0;">
+                            <span style="display: inline-block; background: #e6fffa; color: #234e52; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; margin: 0.25rem;">PHP</span>
+                            <span style="display: inline-block; background: #e6fffa; color: #234e52; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; margin: 0.25rem;">MySQL</span>
+                        </div>
+                        <a href="#" class="btn btn-primary" onclick="alert('Demo project - view code on GitHub!')">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <h3>📝 Blog CMS with Security</h3>
+                        <p>Content management system with role-based access control and XSS/SQL injection prevention.</p>
+                        <div style="margin: 1rem 0;">
+                            <span style="display: inline-block; background: #e6fffa; color: #234e52; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; margin: 0.25rem;">PHP</span>
+                            <span style="display: inline-block; background: #e6fffa; color: #234e52; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; margin: 0.25rem;">Bootstrap</span>
+                        </div>
+                        <a href="#" class="btn btn-primary" onclick="alert('Demo project - view code on GitHub!')">View Details</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ FIXED: Footer classes match style.css -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Aarati Bulun. All rights reserved.</p>
+            <p class="security-badge">🔒 OWASP Top 10 Protected | Docker Secured</p>
+        </div>
+    </footer>
+</body>
+</html>

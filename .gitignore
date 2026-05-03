@@ -1,0 +1,5 @@
+*.php
+config/
+includes/
+blog/admin.html
+.DS_Store

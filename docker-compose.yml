@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  portfolio:
+    build: .
+    container_name: aarati_portfolio
+    ports:
+      - "8080:8080"
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /var/cache/nginx
+      - /var/run
+    restart: unless-stopped
